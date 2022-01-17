@@ -8,7 +8,7 @@ public class CharacterCreationState : BaseMenuState
     {
         base.Enter();
         Debug.Log("entered character creation menu state");
-        mainMenuController.createCharMenuCanvasObj.GetComponent<Canvas>().enabled = true;
+        mainMenuController.createCharMenuCanvas.enabled = true;
         backFromCharCreateToMainButton.onClick.AddListener(() => OnBackButtonClicked());
 
     }
@@ -16,7 +16,7 @@ public class CharacterCreationState : BaseMenuState
     public override void Exit()
     {
         base.Exit();
-        mainMenuController.createCharMenuCanvasObj.GetComponent<Canvas>().enabled = false;
+        mainMenuController.createCharMenuCanvas.enabled = false;
     }
 
     void OnBackButtonClicked()

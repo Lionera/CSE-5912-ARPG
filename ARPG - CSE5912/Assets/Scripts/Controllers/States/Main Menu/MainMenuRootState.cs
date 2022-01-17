@@ -9,7 +9,7 @@ public class MainMenuRootState : BaseMenuState
     {
         base.Enter();
         Debug.Log("entered main menu root state");
-        mainMenuController.mainMenuCanvasObj.GetComponent<Canvas>().enabled = true;
+        mainMenuController.mainMenuCanvas.enabled = true;
         startGameButton.onClick.AddListener(() => OnStartGameClicked());
         createCharButton.onClick.AddListener(() => OnCreateCharClicked());
     }
@@ -17,7 +17,7 @@ public class MainMenuRootState : BaseMenuState
     public override void Exit()
     {
         base.Exit();
-        mainMenuController.mainMenuCanvasObj.GetComponent<Canvas>().enabled = false;
+        mainMenuController.mainMenuCanvas.enabled = false;
     }
 
     void OnStartGameClicked()
