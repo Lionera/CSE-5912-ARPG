@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class BaseMenuState : State
 {
-    // Get references to all of the necessary pieces of the game here
     protected MainMenuController mainMenuController;
 
     public Button startGameButton;
