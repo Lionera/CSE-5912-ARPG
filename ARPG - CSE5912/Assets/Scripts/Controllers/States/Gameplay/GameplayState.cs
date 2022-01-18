@@ -28,6 +28,7 @@ public class GameplayState : BaseGameplayState
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
+            Debug.Log("Escape Pressed GP State");
             PauseGame();
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuRootState : BaseMenuState
@@ -23,6 +24,8 @@ public class MainMenuRootState : BaseMenuState
     void OnStartGameClicked()
     {
         Debug.Log("Start Button Clicked!");
+        //TODO: Add a loading screen here somehow
+        SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
     }
 
     void OnCreateCharClicked()

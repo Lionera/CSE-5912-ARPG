@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseGameState : BaseGameplayState
 {
@@ -11,6 +12,7 @@ public class PauseGameState : BaseGameplayState
         Time.timeScale = 0;
         gameplayStateController.pauseMenuCanvas.enabled = true;
         resumeGameButton.onClick.AddListener(() => OnResumeGameClicked());
+        exitToMainMenuButton.onClick.AddListener(() => OnExitToMenuClicked());
     }
 
     public override void Exit()
@@ -25,10 +27,16 @@ public class PauseGameState : BaseGameplayState
         ResumeGame();
     }
 
+    void OnExitToMenuClicked()
+    {
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+    }
+
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
+            Debug.Log("Escape Pressed");
             ResumeGame();
         }
     }
