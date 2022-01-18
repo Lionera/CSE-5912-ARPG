@@ -10,11 +10,17 @@
 >>>>>>> c85177d (Initial commit. .gitignore, isometric camera with player attach, left click to move)
 >>>>>>> 1a487b3 (Initial commit. Added isometric camera, left click to move, camera attach to player)
 #
+[Ll]ibrary/
 /[Ll]ibrary/
+[Tt]emp/
 /[Tt]emp/
+[Oo]bj/
 /[Oo]bj/
+[Bb]uild/
 /[Bb]uild/
+[Bb]uilds/
 /[Bb]uilds/
+[Ll]ogs/
 /[Ll]ogs/
 <<<<<<< HEAD
 =======
