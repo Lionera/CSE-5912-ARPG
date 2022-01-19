@@ -6,15 +6,16 @@ using TMPro;
 public class TypeWriterEffect : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]private float writingSpeed = 10f;
-    public void Run(string textToType, TMP_Text textLabel)
+    [SerializeField]private float writingSpeed = 5f;
+    public Coroutine Run(string textToType, TMP_Text textLabel)
     {
-        StartCoroutine(routine:TypeText(textToType,textLabel));
+        return StartCoroutine(routine:TypeText(textToType,textLabel));
     }
     private IEnumerator TypeText(string textToType, TMP_Text textLabel)
     {
         textLabel.text = string.Empty;
-        yield return new WaitForSeconds(1);
+        //delete yield return?
+        //yield return new WaitForSeconds(1);
         float t = 0;
         int charIndex = 0;
         while ( charIndex < textToType.Length)

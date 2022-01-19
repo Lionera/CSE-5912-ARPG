@@ -5,11 +5,25 @@ using UnityEngine.AI;
 
 public class PlayerMove : MonoBehaviour
 {
+    [SerializeField] private DialogueUI dialogueUI;
+
+    public DialogueUI DialogueUI => dialogueUI;
+
+    public IInteractable Interactable {get; set; }
+
     void Update()
     {
+        if (dialogueUI.IsOpen) return;
         if (Input.GetMouseButton(0))
         {
             MoveToCursor();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (Interactable != null)
+            {
+                Interactable.Interact(player: this);
+            }
         }
     }
 
@@ -21,6 +35,8 @@ public class PlayerMove : MonoBehaviour
         {
             GetComponent<NavMeshAgent>().destination = rcHit.point;
         }
+
+     
     }
 }
 
