@@ -6,9 +6,7 @@ using UnityEngine.AI;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private DialogueUI dialogueUI;
-
     public DialogueUI DialogueUI => dialogueUI;
-
     public IInteractable Interactable {get; set; }
 
     void Update()
@@ -30,13 +28,10 @@ public class PlayerMove : MonoBehaviour
     private void MoveToCursor()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit rcHit;
-        if (Physics.Raycast(ray, out rcHit))
+        if (Physics.Raycast(ray, out RaycastHit rcHit))
         {
             GetComponent<NavMeshAgent>().destination = rcHit.point;
         }
-
-     
     }
 }
 
